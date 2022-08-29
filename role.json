@@ -4,7 +4,7 @@
       "Description": "DO NOT CHANGE OR SHARE THIS. This is a temporary TinyStacks token unique to your user",
       "Type": "String"
     },
-    "TinyStacksGroupId": {
+    "TinyStacksUserId": {
       "Description": "DO NOT CHANGE OR SHARE THIS. This is your unique group id, it's necessary for deleting this role",
       "Type": "String"
     },
