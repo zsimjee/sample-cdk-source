@@ -24,6 +24,10 @@
       "Description": "DO NOT CHANGE THIS.",
       "Type": "String"
     },
+    "SourceOwner": {
+      "Description": "DO NOT CHANGE THIS.",
+      "Type": "String"
+    },
     "IsGroup": {
       "Description": "DO NOT CHANGE THIS.",
       "Type": "String",
@@ -197,6 +201,9 @@
         },
         "SourceName": {
           "Ref": "SourceName"
+        },
+        "SourceOwner": {
+          "Ref": "SourceOwner"
         },
         "IsGroup": {
           "Ref": "IsGroup"
