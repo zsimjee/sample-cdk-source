@@ -189,8 +189,8 @@
         "TinyStacksUserToken": {
           "Ref": "TinyStacksToken"
         },
-        "TinyStacksGroupId": {
-          "Ref": "TinyStacksGroupId"
+        "TinyStacksUserId": {
+          "Ref": "TinyStacksUserId"
         },
         "StackName": {
           "Ref": "StackName"
