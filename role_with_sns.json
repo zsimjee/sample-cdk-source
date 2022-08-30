@@ -176,6 +176,39 @@
           }
         ]
       }
+    },
+    "RegisterRoleWithTinyStacks": {
+      "Type": "Custom::notifyTS",
+      "Properties": {
+        "ServiceToken": "arn:aws:sns:us-east-1:849087520365:disposable-test-topic",
+        "RoleArn": {
+          "Fn::GetAtt": [
+            "Role",
+            "Arn"
+          ]
+        },
+        "Region": {
+          "Ref": "AWS::Region"
+        },
+        "TinyStacksUserToken": {
+          "Ref": "TinyStacksToken"
+        },
+        "TinyStacksUserId": {
+          "Ref": "TinyStacksUserId"
+        },
+        "StackName": {
+          "Ref": "StackName"
+        },
+        "SourceName": {
+          "Ref": "SourceName"
+        },
+        "SourceOwner": {
+          "Ref": "SourceOwner"
+        },
+        "IsGroup": {
+          "Ref": "IsGroup"
+        }
+      }
     }
   }
 }
