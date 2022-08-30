@@ -180,7 +180,7 @@
     "RegisterRoleWithTinyStacks": {
       "Type": "Custom::notifyTS",
       "Properties": {
-        "ServiceToken": "arn:aws:sns:us-east-1:849087520365:cfn-events-sns-topic-local",
+        "ServiceToken": "arn:aws:sns:us-east-1:849087520365:disposable-test-topic",
         "RoleArn": {
           "Fn::GetAtt": [
             "Role",
