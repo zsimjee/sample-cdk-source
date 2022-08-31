@@ -167,6 +167,27 @@
                 }
               ]
             }
+          },
+          {
+            "PolicyName": "CdkCloudFormationPolicy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "cloudformation:DescribeStacks",
+                    "cloudformation:GetTemplate",
+                    "cloudformation:DescribeStackResources"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:aws:cloudformation:*:${AWS::AccountId}:stack/CDKToolkit*"
+                    }
+                  ]
+                }
+              ]
+            }
           }
         ],
         "Tags": [
