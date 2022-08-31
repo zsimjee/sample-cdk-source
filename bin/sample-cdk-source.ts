@@ -10,11 +10,9 @@ console.info(`CDK_DEFAULT_ACCOUNT: ${process.env.CDK_DEFAULT_ACCOUNT}`);
 console.info(`CDK_DEFAULT_REGION: ${process.env.CDK_DEFAULT_REGION}`);
 
 const app = new cdk.App();
-new SampleCdkSourceStack(app, 'SampleCdkSourceStack');
-
-// , {
-//   env: { 
-//     account: process.env.CDK_DEFAULT_ACCOUNT, 
-//     region: process.env.CDK_DEFAULT_REGION
-//   }
-// }
+new SampleCdkSourceStack(app, 'SampleCdkSourceStack', {
+  env: { 
+    account: process.env.CDK_DEFAULT_ACCOUNT, 
+    region: process.env.CDK_DEFAULT_REGION
+  }
+});
