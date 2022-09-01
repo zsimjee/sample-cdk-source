@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { SampleCdkSourceStack } from '../lib/sample-cdk-source-stack';
 
 const stackName = process.env.STACK_NAME || 'SampleCdkSourceStack';
-const queueName = process.env.QueueName!;
+const queueName = process.env.QueueName;
 const visibilityTimeout = Number(process.env.VisibilityTimeout || 30);
 
 const app = new cdk.App();
