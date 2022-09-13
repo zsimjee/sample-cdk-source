@@ -38,7 +38,8 @@
       "AllowedValues": [
         "TRUE",
         "FALSE"
-      ]
+      ],
+      "Default": "FALSE"
     }
   },
   "Resources": {
