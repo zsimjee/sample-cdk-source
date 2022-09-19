@@ -1,0 +1,28 @@
+{
+  "owner": "group:TinyStacks",
+  "name": "sample-cdk-source",
+  "repository": {
+    "cloneUrl": "https://github.com/tinystacks/sample-cdk-source.git",
+    "defaultBranch": "main"
+  },
+  "infrastructureCodeType": {
+    "format": "AWS_CDK",
+    "language": "typescript"
+  },
+  "cloudProvider": "aws",
+  "parameters": {
+    "QueueName": {
+      "propertyType": "string",
+      "displayName": "Name your queue",
+      "description": "Name for the SQS queue this stack will create",
+      "required": true
+    },
+    "VisibilityTimeout": {
+      "propertyType": "number",
+      "defaultValue": 30,
+      "displayName": "Set a visibility timeout (default: 30 seconds)",
+      "description": "The time alloted, once read, for a message to remain unvisibile to other consumers until a resolution occurs",
+      "required": false
+    }
+  }
+}
