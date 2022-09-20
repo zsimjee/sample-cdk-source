@@ -24,7 +24,7 @@ export class SampleCdkSourceStack extends cdk.Stack {
       visibilityTimeout: cdk.Duration.seconds(visibilityTimeout)
     });
 
-    const sourceVersion = fs.readFileSync(path.resolve(__dirname, '../.version')).toString();
+    const sourceVersion = fs.readFileSync(path.resolve(__dirname, '../.version')).toString().trim();
     Tags.of(this).add('ts_source_version', sourceVersion);
   }
 }
