@@ -25,6 +25,6 @@ export class SampleCdkSourceStack extends cdk.Stack {
     });
 
     const sourceVersion = fs.readFileSync(path.resolve(__dirname, '../.version')).toString();
-    Tags.of(queue).add('ts_source_version', sourceVersion);
+    Tags.of(this).add('ts_source_version', sourceVersion);
   }
 }
