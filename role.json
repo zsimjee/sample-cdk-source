@@ -128,7 +128,19 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "sts:AssumeRole"
+                    "sts:AssumeRole",
+                    "iam:GetRole",
+                    "iam:CreateRole",
+                    "iam:UpdateRole",
+                    "iam:DeleteRole",
+                    "iam:GetRolePolicy",
+                    "iam:ListAttachedRolePolicies",
+                    "iam:ListRolePolicies",
+                    "iam:AttachRolePolicy",
+                    "iam:DeleteRolePolicy",
+                    "iam:DetachRolePolicy",
+                    "iam:PutRolePolicy",
+                    "iam:UpdateAssumeRolePolicy"
                   ],
                   "Resource": [
                     {
@@ -164,10 +176,10 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "ssm:*"
+                    "ssm:*Parameter*"
                   ],
                   "Resource": [
-                    "arn:aws:ssm::*:parameter/cdk-bootstrap/*"
+                    "arn:aws:ssm:*:${AWS::AccountId}:parameter/cdk-bootstrap/*"
                   ]
                 }
               ]
