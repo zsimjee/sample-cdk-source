@@ -181,15 +181,7 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "cloudformation:DescribeStacks",
-                    "cloudformation:GetTemplate",
-                    "cloudformation:DescribeStackResources",
-                    "cloudformation:DescribeChangeSet",
-                    "cloudformation:ListChangeSets",
-                    "cloudformation:CreateChangeSet",
-                    "cloudformation:DescribeChangeSetHooks",
-                    "cloudformation:DeleteChangeSet",
-                    "cloudformation:ExecuteChangeSet"
+                    "cloudformation:*"
                   ],
                   "Resource": [
                     {
