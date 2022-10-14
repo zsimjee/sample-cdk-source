@@ -183,11 +183,36 @@
                   "Action": [
                     "cloudformation:DescribeStacks",
                     "cloudformation:GetTemplate",
-                    "cloudformation:DescribeStackResources"
+                    "cloudformation:DescribeStackResources",
+                    "cloudformation:DescribeChangeSet",
+                    "cloudformation:ListChangeSets",
+                    "cloudformation:CreateChangeSet",
+                    "cloudformation:DescribeChangeSetHooks",
+                    "cloudformation:DeleteChangeSet",
+                    "cloudformation:ExecuteChangeSet"
                   ],
                   "Resource": [
                     {
                       "Fn::Sub": "arn:aws:cloudformation:*:${AWS::AccountId}:stack/CDKToolkit*"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "PolicyName": "CdkEcrPolicy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "ecr:*"
+                  ],
+                  "Resource": [
+                    {
+                      "Fn::Sub": "arn:aws:ecr:*:${AWS::AccountId}:repository/cdk*"
                     }
                   ]
                 }
