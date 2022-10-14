@@ -164,7 +164,7 @@
                 {
                   "Effect": "Allow",
                   "Action": [
-                    "ssm:GetParameter"
+                    "ssm:*"
                   ],
                   "Resource": [
                     "arn:aws:ssm::*:parameter/cdk-bootstrap/*"
