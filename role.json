@@ -106,7 +106,7 @@
             "Fn::Transform": {
               "Name": "AWS::Include",
               "Parameters": {
-                 "Location": "s3://tinystacks/cloudformation-templates/cfn-events-publishing-policy/snippet.json"
+                 "Location": "s3://tinystacks/cloudformation-templates/publish-cfn-events-inline-policy/snippet.json"
               }
             }
           },
@@ -114,7 +114,7 @@
             "Fn::Transform": {
               "Name": "AWS::Include",
               "Parameters": {
-                 "Location": "s3://tinystacks/cloudformation-templates/base-cdk-policy/snippet.json"
+                 "Location": "s3://tinystacks/cloudformation-templates/cdk-bootstrap-inline-policy/snippet.json"
               }
             }
           }
