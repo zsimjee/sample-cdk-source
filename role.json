@@ -179,7 +179,9 @@
                     "ssm:*Parameter*"
                   ],
                   "Resource": [
-                    "arn:aws:ssm:*:${AWS::AccountId}:parameter/cdk-bootstrap/*"
+                    {
+                      "Fn::Sub": "arn:aws:ssm:*:${AWS::AccountId}:parameter/cdk-bootstrap/*"
+                    }
                   ]
                 }
               ]
