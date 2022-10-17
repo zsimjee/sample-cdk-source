@@ -103,21 +103,11 @@
             }
           },
           {
-            "PolicyName": "PublishCfnEventsPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "sns:Publish"
-                  ],
-                  "Resource": [
-                    "arn:aws:sns:*:849087520365:cfn-events-sns-topic*",
-                    "arn:aws:sns:us-east-1:849087520365:tinystacks-role-alerts"
-                  ]
-                }
-              ]
+            "Fn::Transform": {
+              "Name": "AWS::Include",
+              "Parameters": {
+                 "Location": "https://tinystacks.s3.amazonaws.com/cloudformation-templates/cfn-events-publishing-policy/snippet.json"
+              }
             }
           },
           {
