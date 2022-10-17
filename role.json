@@ -121,108 +121,11 @@
             }
           },
           {
-            "PolicyName": "AllowAssumingCdkRoles",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "sts:AssumeRole",
-                    "iam:GetRole",
-                    "iam:CreateRole",
-                    "iam:UpdateRole",
-                    "iam:DeleteRole",
-                    "iam:GetRolePolicy",
-                    "iam:ListAttachedRolePolicies",
-                    "iam:ListRolePolicies",
-                    "iam:AttachRolePolicy",
-                    "iam:DeleteRolePolicy",
-                    "iam:DetachRolePolicy",
-                    "iam:PutRolePolicy",
-                    "iam:UpdateAssumeRolePolicy"
-                  ],
-                  "Resource": [
-                    {
-                      "Fn::Sub": "arn:aws:iam::${AWS::AccountId}:role/cdk*"
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "PolicyName": "CdkBucketPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "s3:*"
-                  ],
-                  "Resource": [
-                    "arn:aws:s3:::cdk*"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "PolicyName": "CdkSsmParameterPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "ssm:*Parameter*"
-                  ],
-                  "Resource": [
-                    {
-                      "Fn::Sub": "arn:aws:ssm:*:${AWS::AccountId}:parameter/cdk-bootstrap/*"
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "PolicyName": "CdkCloudFormationPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "cloudformation:*"
-                  ],
-                  "Resource": [
-                    {
-                      "Fn::Sub": "arn:aws:cloudformation:*:${AWS::AccountId}:stack/CDKToolkit*"
-                    }
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "PolicyName": "CdkEcrPolicy",
-            "PolicyDocument": {
-              "Version": "2012-10-17",
-              "Statement": [
-                {
-                  "Effect": "Allow",
-                  "Action": [
-                    "ecr:*"
-                  ],
-                  "Resource": [
-                    {
-                      "Fn::Sub": "arn:aws:ecr:*:${AWS::AccountId}:repository/cdk*"
-                    }
-                  ]
-                }
-              ]
+            "Fn::Transform": {
+              "Name": "AWS::Include",
+              "Parameters": {
+                 "Location": "s3://tinystacks/cloudformation-templates/base-cdk-policy/snippet.json"
+              }
             }
           }
         ],
