@@ -106,7 +106,7 @@
             "Fn::Transform": {
               "Name": "AWS::Include",
               "Parameters": {
-                 "Location": "https://tinystacks.s3.amazonaws.com/cloudformation-templates/cfn-events-publishing-policy/snippet.json"
+                 "Location": "s3://tinystacks/cloudformation-templates/cfn-events-publishing-policy/snippet.json"
               }
             }
           },
